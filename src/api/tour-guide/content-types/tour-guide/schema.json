@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tour_guides",
+  "info": {
+    "singularName": "tour-guide",
+    "pluralName": "tour-guides",
+    "displayName": "Tour Guide"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "profile_picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "experience_years": {
+      "type": "integer"
+    },
+    "languages_spoken": {
+      "type": "string"
+    },
+    "tours": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tour.tour",
+      "inversedBy": "tour_guides"
+    }
+  }
+}
